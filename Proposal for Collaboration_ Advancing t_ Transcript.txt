@@ -1,0 +1,74 @@
+Proposal for Collaboration: Advancing the ADAM Project through Strategic Support
+Wed, Oct 1, 2025
+
+0:01 - Ahmad Yasni Yahya
+How are you, Zain? How are you?
+
+0:05 - SHAMSUL IZHAN BIN ABDUL MAJID (NAIO)
+Quite busy over here. I'm the only one joining this call from Nayo. So unfortunately, I have to cut short by 30 minutes because I have to run to another meeting at 3.30. But never mind. This is our first meeting, so we can just keep it short. Sure, sure.
+
+0:29 - Ahmad Yasni Yahya
+Actually, I don't know how to start this. But remember that I made a video in Penang back then when I was doing AI coaching with Sofia Song.
+
+0:44 - Ahmad Yasni Yahya
+So, my plan is that... Actually, I created Adam. Adam is basically like an agile assistant.
+
+0:57 - Ahmad Yasni Yahya
+for people who manage projects. So basically, it gives the platform to the user to be more efficient in their project management.
+
+1:12 - Ahmad Yasni Yahya
+For example, if we subproject, most of the time, the project manager is not sure what to do. So we have this AI tool that allows start somewhere with that. So that's the whole idea basically. I mean, I myself, I'm a project manager for overseas, the Melbourne project, years ago.
+
+1:40 - SHAMSUL IZHAN BIN ABDUL MAJID (NAIO)
+So I understand where you're coming from, that it's important to have a management tracking tool so that we can record and capture. So are you expecting Nayo to be a client or you know I recommend this to someone? I'm looking at some of the opportunity.
+
+2:25 - Ahmad Yasni Yahya
+But they're still in my local system. So to push out to end user will be very premature. But they're still in the early stage. That's why I'm looking for some investment, some opportunity to build the application to be ready for end users Oh, I see.
+
+2:52 - SHAMSUL IZHAN BIN ABDUL MAJID (NAIO)
+That's what you are looking for. So obviously, NIO, we are not an organization that doesn't have money to give away to people. But I can connect you to MDAC. Recently, they just gave a few million ringgit to a few companies that are part of the AI grant.
+
+3:20 - SHAMSUL IZHAN BIN ABDUL MAJID (NAIO)
+accelerator grant about two weeks ago. Yeah, so I don't know how many cohorts or batches, but I can certainly connect you to people there so that you must explore. Typically, it's better for the software producer to start first by how the market responds because the government if they simply put money but it fails then it's a worry because this thing is tax-based money. So it's best that you demonstrate that this thing, your product can sustain and it's different so you should go out there and get customers, get it completed, version 1.0, don't have to boil the ocean, you have to do everything. You only do a little bit first, the most important thing, then get customers, customers use it, customers talk about it, give testimonials, you get some income, and then you can demonstrate that with help from the government, then you can maybe get more market share or be able sell to international market.
+
+4:49 - Ahmad Yasni Yahya
+So that's why I thought at first, I thought NIO had a kind of funding seed grant. Doesn't go by personnel, MDEC goes by company. This is taxpayer's money.
+
+5:12 - Ahmad Yasni Yahya
+So actually, I've just started, and I don't have a company form yet. Actually, this session is more or less a brainstorming session. I need to get your feedback on how, if I were to start, I can form a company, promote the application. I mean, the marketing, I've done a little bit. That is part and parcel of the overall strategy. Yeah, yeah, yeah.
+
+6:08 - SHAMSUL IZHAN BIN ABDUL MAJID (NAIO)
+I understand. I mean, I used to have my own company overseas in Melbourne for 10 years before I came back.
+
+6:18 - SHAMSUL IZHAN BIN ABDUL MAJID (NAIO)
+This is where, I mean, I come from my own experience. I didn't get any government help when I was running my own business overseas. You know, we roll back the money. You get one customer, you roll back, you roll back. And I'm a Malay kid who runs company dekat luar malaysia yang hire semua non-malaysian and so I'm I totally understand your challenge but where I'm coming from is that you must demonstrate to the government sebaiknya duit taxpayer you must you must demonstrate that benda ni ada ada future uh you have put your skin in the game you dah you dah commit dulu sebelum government commit so because it's your business so number one the example of commitment is you set up a company because that is I mean from a legal point of view if there is no company, legally you are not at a good place. So I think with a company, company is a vehicle for you to do many many things as an individual you cannot do many things but as a company for example as a company you get to pay lower tax so yeah so then you can buy your app you can buy asset it's part of the business blah blah and uh and then when you get your cost your when you get your customers because only only a company can have a customer and and in the customer yeah so I run business So I would recommend you set up a company, get customers to use your product, get their feedback so that you can improve, show that when you want to project out over multiple more customers, you are hitting some sort of ceiling, like glass ceiling in terms of GPU or whatever. And this is where the same ceiling is also being faced by other startups. And this is where, if possible, the government will provide some assistance.
+
+8:46 - Ahmad Yasni Yahya
+So maybe, is there any other option, like collaboration with the university, that you can suggest?
+
+8:56 - Ahmad Yasni Yahya
+Of course.
+
+8:56 - SHAMSUL IZHAN BIN ABDUL MAJID (NAIO)
+I mean, I can connect you, but it depends on what you want. Because collaboration is not just about research, or doing papers, or you want students working for interns. Yeah, there are many areas. Just that as the founder, you are the founder, you should know what you want.
+
+9:21 - Ahmad Yasni Yahya
+Actually, I have a team. Oh, yes.
+
+9:52 - SHAMSUL IZHAN BIN ABDUL MAJID (NAIO)
+But this is where partnership is important. You must have business partners or partners from your staff or friends who understand certain areas better than you.
+
+10:13 - SHAMSUL IZHAN BIN ABDUL MAJID (NAIO)
+Because I've been in that situation many, many times. You shouldn't do everything. You only focus on what you I think it's a good feedback from you. I'm not trying to push the product to you.
+
+10:48 - Ahmad Yasni Yahya
+Because I don't know if the product is still in development. But I'm sure in Reddit, in GitHub, there is a demo.
+
+11:00 - SHAMSUL IZHAN BIN ABDUL MAJID (NAIO)
+But you can come back to me once it's stable, once you have a customer. Then maybe my staff, if they see something that they can use or promote to other friends, And then we are happy to assist you. OK, great.
+
+11:23 - SHAMSUL IZHAN BIN ABDUL MAJID (NAIO)
+OK, Sam. Thank you so much.
+
+11:24 - Ahmad Yasni Yahya
+Hopefully, with your advice, we can do something. OK, thank you.
