@@ -1,0 +1,9 @@
+streamlit
+PyPDF2
+openpyxl
+python-pptx
+beautifulsoup4
+requests
+openai
+anthropic
+ollama
