@@ -74,6 +74,38 @@ st.markdown("""
         border: 1px solid #565869;
         cursor: pointer;
     }
+    .mode-button-active {
+        background-color: #10a37f !important;
+        color: white !important;
+        border: 2px solid #0d8c6d !important;
+    }
+    .mode-button-inactive {
+        background-color: #40414f !important;
+        color: #8e8ea0 !important;
+        border: 1px solid #565869 !important;
+    }
+    .search-result-card {
+        background-color: #40414f;
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        margin-bottom: 1rem;
+        border-left: 4px solid #10a37f;
+    }
+    .search-result-title {
+        color: #10a37f;
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+    .search-result-url {
+        color: #8e8ea0;
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+    .search-result-content {
+        color: #ececf1;
+        line-height: 1.6;
+    }
 </style>
 """, unsafe_allow_html=True)
 
@@ -234,22 +266,27 @@ def ollama_web_search(query: str, api_key: str, max_results: int = 5) -> Dict:
         }
 
 def format_search_results(search_data: Dict) -> str:
-    """Format search results for display"""
+    """Format search results for display using the correct API response format"""
     if 'error' in search_data:
         return f"⚠️ {search_data['error']}"
     
-    if not search_data.get('results'):
+    results = search_data.get('results', [])
+    if not results:
         return "No results found."
     
-    formatted = "## 🔍 Search Results\n\n"
-    for idx, result in enumerate(search_data.get('results', []), 1):
+    formatted = ""
+    for idx, result in enumerate(results, 1):
         title = result.get('title', 'No title')
         url = result.get('url', '#')
-        snippet = result.get('snippet', 'No description available')
+        content = result.get('content', 'No content available')
         
-        formatted += f"### {idx}. [{title}]({url})\n"
-        formatted += f"{snippet}\n\n"
-        formatted += "---\n\n"
+        formatted += f"""
+<div class='search-result-card'>
+    <div class='search-result-title'>{idx}. {title}</div>
+    <div class='search-result-url'>🔗 {url}</div>
+    <div class='search-result-content'>{content}</div>
+</div>
+"""
     
     return formatted
 
@@ -485,22 +522,43 @@ def main_page():
         
         # Chat History
         st.markdown("---")
-        st.subheader("Chat History")
+        st.subheader("Mode Selection")
         
-        # Search Mode Toggle
+        # Search Mode Toggle with custom styling
         col1, col2 = st.columns(2)
         with col1:
-            if st.button("💬 Chat Mode", use_container_width=True, 
-                        type="primary" if not st.session_state.search_mode else "secondary"):
+            chat_class = "mode-button-active" if not st.session_state.search_mode else "mode-button-inactive"
+            st.markdown(f"""
+                <style>
+                    div[data-testid="column"]:nth-of-type(1) button {{
+                        {f'background-color: #10a37f !important; border: 2px solid #0d8c6d !important;' if not st.session_state.search_mode else 'background-color: #40414f !important; border: 1px solid #565869 !important;'}
+                    }}
+                </style>
+            """, unsafe_allow_html=True)
+            if st.button("💬 Chat", use_container_width=True, key="chat_mode_btn"):
                 st.session_state.search_mode = False
                 st.rerun()
+        
         with col2:
-            if st.button("🔍 Search Mode", use_container_width=True,
-                        type="primary" if st.session_state.search_mode else "secondary"):
+            search_class = "mode-button-active" if st.session_state.search_mode else "mode-button-inactive"
+            st.markdown(f"""
+                <style>
+                    div[data-testid="column"]:nth-of-type(2) button {{
+                        {f'background-color: #10a37f !important; border: 2px solid #0d8c6d !important;' if st.session_state.search_mode else 'background-color: #40414f !important; border: 1px solid #565869 !important;'}
+                    }}
+                </style>
+            """, unsafe_allow_html=True)
+            if st.button("🔍 Search", use_container_width=True, key="search_mode_btn"):
                 st.session_state.search_mode = True
                 st.rerun()
         
+        # Display current mode
+        mode_text = "🔍 Search Mode Active" if st.session_state.search_mode else "💬 Chat Mode Active"
+        mode_color = "#10a37f" if st.session_state.search_mode else "#10a37f"
+        st.markdown(f"<p style='text-align: center; color: {mode_color}; font-weight: bold;'>{mode_text}</p>", unsafe_allow_html=True)
+        
         st.markdown("---")
+        st.subheader("Chat History")
         
         if st.button("➕ New Chat", use_container_width=True):
             st.session_state.chat_history = []
@@ -553,17 +611,34 @@ def main_page():
     with chat_container:
         for msg_idx, message in enumerate(st.session_state.chat_history):
             if message['role'] == 'user':
-                st.markdown(f"""
-                <div class='chat-message user-message'>
-                    <strong>You:</strong><br>{message['content']}
-                </div>
-                """, unsafe_allow_html=True)
+                # Check if it's a search query
+                if message.get('search_query', False):
+                    st.markdown(f"""
+                    <div class='chat-message user-message'>
+                        <strong>🔍 You searched for:</strong><br>{message['content'].replace('🔍 Search: ', '')}
+                    </div>
+                    """, unsafe_allow_html=True)
+                else:
+                    st.markdown(f"""
+                    <div class='chat-message user-message'>
+                        <strong>You:</strong><br>{message['content']}
+                    </div>
+                    """, unsafe_allow_html=True)
             else:
-                st.markdown(f"""
-                <div class='chat-message assistant-message'>
-                    <strong>A.D.A.M:</strong><br>{message['content']}
-                </div>
-                """, unsafe_allow_html=True)
+                # Check if it's search results
+                if message.get('search_results', False):
+                    st.markdown("""
+                    <div class='chat-message assistant-message'>
+                        <strong>A.D.A.M Search Results:</strong><br>
+                    """, unsafe_allow_html=True)
+                    st.markdown(message['content'], unsafe_allow_html=True)
+                    st.markdown("</div>", unsafe_allow_html=True)
+                else:
+                    st.markdown(f"""
+                    <div class='chat-message assistant-message'>
+                        <strong>A.D.A.M:</strong><br>{message['content']}
+                    </div>
+                    """, unsafe_allow_html=True)
                 
                 # Display follow-up questions only for the last assistant message
                 if 'follow_ups' in message and msg_idx == len(st.session_state.chat_history) - 1:
